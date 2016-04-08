@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html ng-app="app1">
+  <head>
+    <title>Simple Map</title>
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta charset="utf-8">
+    <style>
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      #map {
+        height: 100%;
+      }
+      #floating-panel {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  height: 96%;
+  width:30%;
+  margin: 0;
+  z-index: 5;
+  background-color: #fff;
+  padding: 5px;
+  border: 1px solid #999;
+  text-align: center;
+  font-family: 'Roboto','sans-serif';
+  line-height: 30px;
+  padding-left: 10px;
+}
+    </style>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCYDIQRDzrOhkBIK1pXWIFPzQxLC33uJi0"></script>
+  </head>
+  <body ng-controller='mappa'>
+    <button>Toggle</button>
+    <div id='floating-panel'>
+      <ul ng-repeat="marker in markers">
+        <li ng-click='markers[place]=marker;openInfoWindow($event, marker)'><a href="#">{{marker.nana}}</a></li>
+      </ul>
+        <div style='height:65%;background:lightgrey'><h1>{{markers[place].nana}}</h1>
+          <p>{{markers[place].content}}</p></div>
+      </div>
+    </div>
+    <div id="map"></div> 
+  </div>  
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
+<script type="text/javascript" src="app.js"></script>
+    
+  </body>
+</html>
