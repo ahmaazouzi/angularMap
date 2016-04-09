@@ -72,6 +72,6 @@ app1.controller('mappa', function($scope){
             $scope.map.panTo(markerito.getPosition())}
 });
 
-$( "button" ).click(function() {
-  $( "#floating-panel" ).slideToggle( "slow" );
+$("button").click(function() {
+  $("#floating-panel").slideToggle( "slow" );
 });
