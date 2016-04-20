@@ -22,9 +22,9 @@
 .col-md-4  {
   position: absolute;
   left: 10px;
-  top: 10px;
+  top: 50px;
   right: 10px;
-  margin-top: 25px;
+  /*margin-top: 30px;*/
   z-index:5;
   background-color: #fff;
   border: 1px solid #999;
@@ -53,12 +53,9 @@ button{
       <ul ng-repeat="marker in markers" style="overflow:scroll">
         <li ng-click='markers[place]=marker;openInfoWindow($event, marker)'><a href="#">{{marker.nana}}</a></li>
       </ul>
-        <div id='contento' style='background:lightgrey;'><h1>{{markers[place].nana}}</h1>
-
-
-
-          <p'>{{markers[place].content}}</p></div>
-      </div>
+<!--         <div id='contento' style='background:lightgrey;'><h1>{{markers[place].nana}}</h1>
+          <p>{{markers[place].content}}</p></div>
+      </div> -->
     <!-- </div> -->
   </div>
 
