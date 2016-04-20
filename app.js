@@ -28,7 +28,44 @@ var cities = [
         desc : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et dapibus nunc, sit amet lacinia augue. Praesent sodales mi ante, ac finibus sem maximus eget. Ut non bibendum odio, in suscipit nisl. Aenean ut sem in ligula varius sodales. Sed in libero nec velit tincidunt ultrices. Vivamus imperdiet quam accumsan ullamcorper posuere. Etiam arcu leo, luctus sed mollis sit amet, blandit eu nulla.',
         lat : 36.0800,
         longa : -115.1522
-    }
+    },
+        {
+        city : 'Los Angeles',
+        desc : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et dapibus nunc, sit amet lacinia augue. Praesent sodales mi ante, ac finibus sem maximus eget. Ut non bibendum odio, in suscipit nisl. Aenean ut sem in ligula varius sodales. Sed in libero nec velit tincidunt ultrices. Vivamus imperdiet quam accumsan ullamcorper posuere. Etiam arcu leo, luctus sed mollis sit amet, blandit eu nulla.',
+        lat : 34.0500,
+        longa : -118.2500
+    },
+        {
+        city : 'Los Angeles',
+        desc : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et dapibus nunc, sit amet lacinia augue. Praesent sodales mi ante, ac finibus sem maximus eget. Ut non bibendum odio, in suscipit nisl. Aenean ut sem in ligula varius sodales. Sed in libero nec velit tincidunt ultrices. Vivamus imperdiet quam accumsan ullamcorper posuere. Etiam arcu leo, luctus sed mollis sit amet, blandit eu nulla.',
+        lat : 34.0500,
+        longa : -118.2500
+    },
+        {
+        city : 'Los Angeles',
+        desc : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et dapibus nunc, sit amet lacinia augue. Praesent sodales mi ante, ac finibus sem maximus eget. Ut non bibendum odio, in suscipit nisl. Aenean ut sem in ligula varius sodales. Sed in libero nec velit tincidunt ultrices. Vivamus imperdiet quam accumsan ullamcorper posuere. Etiam arcu leo, luctus sed mollis sit amet, blandit eu nulla.',
+        lat : 34.0500,
+        longa : -118.2500
+    },
+        {
+        city : 'Los Angeles',
+        desc : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et dapibus nunc, sit amet lacinia augue. Praesent sodales mi ante, ac finibus sem maximus eget. Ut non bibendum odio, in suscipit nisl. Aenean ut sem in ligula varius sodales. Sed in libero nec velit tincidunt ultrices. Vivamus imperdiet quam accumsan ullamcorper posuere. Etiam arcu leo, luctus sed mollis sit amet, blandit eu nulla.',
+        lat : 34.0500,
+        longa : -118.2500
+    },
+        {
+        city : 'Los Angeles',
+        desc : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et dapibus nunc, sit amet lacinia augue. Praesent sodales mi ante, ac finibus sem maximus eget. Ut non bibendum odio, in suscipit nisl. Aenean ut sem in ligula varius sodales. Sed in libero nec velit tincidunt ultrices. Vivamus imperdiet quam accumsan ullamcorper posuere. Etiam arcu leo, luctus sed mollis sit amet, blandit eu nulla.',
+        lat : 34.0500,
+        longa : -118.2500
+    },
+        {
+        city : 'Los Angeles',
+        desc : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et dapibus nunc, sit amet lacinia augue. Praesent sodales mi ante, ac finibus sem maximus eget. Ut non bibendum odio, in suscipit nisl. Aenean ut sem in ligula varius sodales. Sed in libero nec velit tincidunt ultrices. Vivamus imperdiet quam accumsan ullamcorper posuere. Etiam arcu leo, luctus sed mollis sit amet, blandit eu nulla.',
+        lat : 34.0500,
+        longa : -118.2500
+    },
+    
 ];
 
 var app1 = angular.module('app1', []);
