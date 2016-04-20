@@ -37,7 +37,7 @@ app1.controller('mappa', function($scope){
           center: {lat: 39.0119, lng: -98.4842},
           zoom: 5,
         mapTypeControlOptions: {
-            position: google.maps.ControlPosition.TOP_LEFT}      
+            position: google.maps.ControlPosition.BOTTOM_LEFT}      
       };
     $scope.map = new google.maps.Map(document.getElementById('map'), mapOptions);
     $scope.markers = [];
