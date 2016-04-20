@@ -57,8 +57,12 @@ app1.controller('mappa', function($scope){
 
         $scope.markers.push(marker);
         marker.addListener('click', function() {
-            infoWindow.setContent('<h2>'+ marker.nana+'</hmarker.content2>') //'<p>'++'</p>'
+            infoWindow.setContent('<h2>'+ marker.nana+'</h2><p>'+marker.content+'</p>')
             infoWindow.open($scope.map, marker);
+            if ($(".col-md-4").is(":visible")){
+                $(".col-md-4").slideToggle( "slow");
+            }
+
         });
 
         }
