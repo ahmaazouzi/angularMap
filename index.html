@@ -4,6 +4,11 @@
     <title>Simple Map</title>
     <meta name="viewport" content="initial-scale=1.0">
     <meta charset="utf-8">
+    <link href="http://fonts.googleapis.com/css?family=Lato:100,300" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
       html, body {
         height: 100%;
@@ -14,13 +19,12 @@
         height: 100%;
       }
       #floating-panel {
-  position: absolute;
+/*  position: absolute;
   left: 10px;
   top: 10px;
   height: 96%;
-  width:30%;
-  margin: 0;
-  z-index: 5;
+  margin-top: 25px;
+  z-index:5;
   background-color: #fff;
   padding: 5px;
   border: 1px solid #999;
@@ -28,25 +32,59 @@
   font-family: 'Roboto','sans-serif';
   line-height: 30px;
   padding-left: 10px;
+  display: none;*/
+}
+
+.col-md-4  {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  right: 10px;
+  margin-top: 25px;
+  z-index:5;
+  background-color: #fff;
+  border: 1px solid #999;
+  text-align: center;
+  font-family: 'Roboto','sans-serif';
+  line-height: 30px;
+  padding-left: 10px;
+  display: none;
+  max-height: 85%;
+  overflow: scroll;
+}
+
+button{
+  z-index: 5;
+  position: absolute;
+  padding: 6px;
+  margin: 10px;
 }
     </style>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCYDIQRDzrOhkBIK1pXWIFPzQxLC33uJi0"></script>
   </head>
   <body ng-controller='mappa'>
     <button>Toggle</button>
-    <form><input type="date"></form>
-    <div id='floating-panel'>
+  <div class="col-md-4">
+    <!-- <div id='floating-panel'> -->
       <ul ng-repeat="marker in markers" style="overflow:scroll">
         <li ng-click='markers[place]=marker;openInfoWindow($event, marker)'><a href="#">{{marker.nana}}</a></li>
       </ul>
-        <div id='contento' style='height:85%;background:lightgrey'><h1>{{markers[place].nana}}</h1>
-          <p>{{markers[place].content}}</p></div>
+        <div id='contento' style='background:lightgrey;'><h1>{{markers[place].nana}}</h1>
+
+
+
+          <p'>{{markers[place].content}}</p></div>
       </div>
-    </div>
+    <!-- </div> -->
+  </div>
+
+
+
     <div id="map"></div> 
   </div>  
 <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
+<script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js'></script>
 <script type="text/javascript" src="app.js"></script>
     
   </body>

@@ -1,0 +1,19 @@
+@media screen and (max-width: 420px) {
+	.col-md-4 {
+		width: 95%;
+		max-height: 85%;
+	}
+}
+
+.social {
+	padding: 20px;
+	margin: 0px;
+	float: right;
+}
+.social:hover{
+	color: lightgray;
+	}
+
+.nana {
+	overflow-x:scroll;
+	}

@@ -73,5 +73,5 @@ app1.controller('mappa', function($scope){
 });
 
 $("button").click(function() {
-  $("#floating-panel").slideToggle( "slow" );
+  $(".col-md-4").slideToggle( "slow");
 });
