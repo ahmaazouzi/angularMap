@@ -35,50 +35,20 @@ var cities = [
         lat : 34.0500,
         longa : -118.2500
     },
-        {
-        city : 'Los Angeles',
-        desc : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et dapibus nunc, sit amet lacinia augue. Praesent sodales mi ante, ac finibus sem maximus eget. Ut non bibendum odio, in suscipit nisl. Aenean ut sem in ligula varius sodales. Sed in libero nec velit tincidunt ultrices. Vivamus imperdiet quam accumsan ullamcorper posuere. Etiam arcu leo, luctus sed mollis sit amet, blandit eu nulla.',
-        lat : 34.0500,
-        longa : -118.2500
-    },
-        {
-        city : 'Los Angeles',
-        desc : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et dapibus nunc, sit amet lacinia augue. Praesent sodales mi ante, ac finibus sem maximus eget. Ut non bibendum odio, in suscipit nisl. Aenean ut sem in ligula varius sodales. Sed in libero nec velit tincidunt ultrices. Vivamus imperdiet quam accumsan ullamcorper posuere. Etiam arcu leo, luctus sed mollis sit amet, blandit eu nulla.',
-        lat : 34.0500,
-        longa : -118.2500
-    },
-        {
-        city : 'Los Angeles',
-        desc : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et dapibus nunc, sit amet lacinia augue. Praesent sodales mi ante, ac finibus sem maximus eget. Ut non bibendum odio, in suscipit nisl. Aenean ut sem in ligula varius sodales. Sed in libero nec velit tincidunt ultrices. Vivamus imperdiet quam accumsan ullamcorper posuere. Etiam arcu leo, luctus sed mollis sit amet, blandit eu nulla.',
-        lat : 34.0500,
-        longa : -118.2500
-    },
-        {
-        city : 'Los Angeles',
-        desc : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et dapibus nunc, sit amet lacinia augue. Praesent sodales mi ante, ac finibus sem maximus eget. Ut non bibendum odio, in suscipit nisl. Aenean ut sem in ligula varius sodales. Sed in libero nec velit tincidunt ultrices. Vivamus imperdiet quam accumsan ullamcorper posuere. Etiam arcu leo, luctus sed mollis sit amet, blandit eu nulla.',
-        lat : 34.0500,
-        longa : -118.2500
-    },
-        {
-        city : 'Los Angeles',
-        desc : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et dapibus nunc, sit amet lacinia augue. Praesent sodales mi ante, ac finibus sem maximus eget. Ut non bibendum odio, in suscipit nisl. Aenean ut sem in ligula varius sodales. Sed in libero nec velit tincidunt ultrices. Vivamus imperdiet quam accumsan ullamcorper posuere. Etiam arcu leo, luctus sed mollis sit amet, blandit eu nulla.',
-        lat : 34.0500,
-        longa : -118.2500
-    },
-    
+
 ];
 
-var app1 = angular.module('app1', []);
+var app1 = angular.module('app1', ['ui.grid']);
 app1.controller('mappa', function($scope){
     var mapOptions = {
           center: {lat: 39.0119, lng: -98.4842},
           zoom: 5,
         mapTypeControlOptions: {
-            position: google.maps.ControlPosition.BOTTOM_LEFT}      
+            position: google.maps.ControlPosition.TOP_RIGHT}      
       };
     $scope.map = new google.maps.Map(document.getElementById('map'), mapOptions);
     $scope.markers = [];
-
+    $scope.myData = JSON.stringify(cities);
     var infoWindow = new google.maps.InfoWindow({maxWidth:200});
 
     var Markado = function(argumado){
@@ -94,11 +64,8 @@ app1.controller('mappa', function($scope){
 
         $scope.markers.push(marker);
         marker.addListener('click', function() {
-            infoWindow.setContent('<h2>'+ marker.nana+'</h2><p>'+marker.content+'</p>')
+            infoWindow.setContent('<h2>'+ marker.nana+'</h2>')
             infoWindow.open($scope.map, marker);
-            if ($(".col-md-4").is(":visible")){
-                $(".col-md-4").slideToggle(100);
-            }
 
         });
 
@@ -111,8 +78,23 @@ app1.controller('mappa', function($scope){
             e.preventDefault();
             google.maps.event.trigger(markerito, 'click');
             $scope.map.panTo(markerito.getPosition())}
+
+        $scope.gridOptions = {
+            data: $scope.myData,
+            columnDefs: [
+            { name: 'Go to', cellTemplate: "<a href='#'>Go to town</a>"},
+            { name: 'city', displayName: 'Name'},
+            { name: 'desc', displayName: "desc"},
+            { name: 'lat', visible: false},
+            { name: 'longa', visible: false},
+
+ ]
+};
+
+
 });
 
 $("button").click(function() {
-  $(".col-md-4").slideToggle( "slow");
+  $(".col-md-4").slideToggle();
 });
+

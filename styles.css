@@ -1,7 +1,8 @@
-@media screen and (max-width: 420px) {
+@media screen and (max-width: 500px) {
 	.col-md-4 {
 		width: 95%;
 		max-height: 85%;
+		
 	}
 }
 
@@ -13,4 +14,5 @@
 .social:hover{
 	color: lightgray;
 	}
+
 

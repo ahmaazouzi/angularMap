@@ -35,7 +35,8 @@
   display: none;
   /*max-height: 90%;*/
   overflow: scroll;
-  height: 97%;
+  height: 93%;
+  border-radius: 5px;
 
 }
 
@@ -45,14 +46,24 @@ button{
   padding: 5px;
   margin: 10px;
 }
+input{
+  z-index: 5;
+  position: absolute;
+  padding: 7px;
+  margin-left: 89px;
+  margin-top: 10px;
+  border-radius: 5px;
+  border: 1px solid lightgrey;
+}
     </style>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCYDIQRDzrOhkBIK1pXWIFPzQxLC33uJi0"></script>
   </head>
   <body ng-controller='mappa'>
 
-    <button class="btn btn-info">Toggle</button>
+
+    <button class="btn btn-info">Toggle</button><input type='text'>
   <div class="col-md-4">
-    <!-- <div id='floating-panel'> -->
+
       <ul ng-repeat="marker in markers" style="overflow:scroll">
         <li ng-click='markers[place]=marker;openInfoWindow($event, marker)'><a href="#">{{marker.nana}}</a></li>
       </ul>
@@ -60,16 +71,21 @@ button{
           <p>{{markers[place].content}}</p></div>
       </div> -->
     <!-- </div> -->
+    <!-- <div id="grid1" ui-grid="{ data: myData }" class="grid"></div> -->
+    <div ui-grid="gridOptions"></div>
   </div>
 
 
 
     <div id="map"></div> 
-  </div>  
+
 <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
 <script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js'></script>
-<script type="text/javascript" src="app.js"></script>
-    
+<script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular-animate.min.js'></script>
+<script src="ui-bootstrap-tpls-1.3.1.min.js"></script>
+<script src="https://cdn.rawgit.com/angular-ui/bower-ui-grid/master/ui-grid.min.js"></script>
+<link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/angular-ui/bower-ui-grid/master/ui-grid.min.css">
+<script type="text/javascript" src="app.js"></script>   
   </body>
 </html>
