@@ -32,6 +32,7 @@
   font-family: 'Roboto','sans-serif';
   line-height: 30px;
   padding-left: 10px;
+  padding-top: 10px;
   display: none;
   /*max-height: 90%;*/
   overflow: scroll;
@@ -65,8 +66,8 @@ input{
     <button class="btn btn-info">Toggle</button><input type='text'>
   <div class="col-md-4">
 
-      <ul ng-repeat="marker in markers" style="overflow:scroll">
-        <li ng-click='markers[place]=marker;openInfoWindow($event, marker)'><a href="#">{{marker.nana}}</a></li>
+      <ul class="list-group" ng-repeat="marker in markers" style="overflow:scroll">
+        <li class="list-group-item" ng-click='markers[place]=marker;openInfoWindow($event, marker)'><a href="#">{{marker.nana}}</a></li>
       </ul>
 <!--         <div id='contento' style='background:lightgrey;'><h1>{{markers[place].nana}}</h1>
           <p>{{markers[place].content}}</p></div>
