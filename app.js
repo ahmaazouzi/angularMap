@@ -79,19 +79,6 @@ app1.controller('mappa', function($scope){
             google.maps.event.trigger(markerito, 'click');
             $scope.map.panTo(markerito.getPosition())}
 
-        
-// cool shit on how to use a ui-grid
-//         $scope.gridOptions = {
-//             data: $scope.myData,
-//             columnDefs: [
-//             { name: 'Go to', cellTemplate: "<a href='#' ng-click='openInfoWindow($event, marker)'>Go to town</a>"},
-//             { name: 'city', displayName: 'Name'},
-//             { name: 'desc', displayName: "desc"},
-//             { name: 'lat', visible: false},
-//             { name: 'longa', visible: false},
-
-//  ]
-// };
 
 
 });
