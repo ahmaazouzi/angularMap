@@ -83,7 +83,12 @@ app1.controller('mappa', function($scope){
 
 });
 
+// $("button").click(function() {
+//   $(".col-md-4").slideToggle();
+// });
+var duration = 'slow';
 $("button").click(function() {
-  $(".col-md-4").slideToggle();
+  $(".col-md-4").animate({width:'toggle'}, 150);
 });
+// 'slide', 
 
