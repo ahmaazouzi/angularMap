@@ -1,10 +1,19 @@
-@media screen and (max-width: 500px) {
-	.col-md-4 {
+@media screen and (max-width: 1000px) {
+	.wawa{
 		width: 100%;
 		max-height: 100%;
 		
 	}
 }
+/*@media screen and (max-width: 1000px) {
+	.col-md-4 {
+		width: 50%;
+		max-height: 50%;
+		
+	}
+}*/
+
+
 
 .social {
 	padding: 20px;
@@ -17,7 +26,28 @@
 .list-group{
 	margin: 0px;
 	text-align: left;
-	font-weight: bold;
+	/*font-weight: bold;*/
+}
+body{
+	color: #808b9c;
+}
+a{
+	color: #808b9c;
+}
+
+.list-group-item{
+	background-color: transparent;
+	border:none;
+	/*border-bottom: 1px solid #808b9c;*/
+}
+.list-group-item:hover{
+	background-color: #36454F;	
+}
+
+a:hover { 
+    background-color: white;
+    color: white;
+    text-decoration: none;
 }
 
 
