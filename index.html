@@ -33,11 +33,11 @@
   line-height: 30px;
 /*  padding-left: 10px;
   padding-top: 10px;*/
-  /*display: none;*/
+  display: none;
   /*max-height: 90%;*/
   overflow: scroll;
   height: 100%;
-
+  width: 325px;
 }
 
 button{
@@ -62,17 +62,16 @@ input{
   <body ng-controller='mappa'>
 
 
-
-
-    <button class="btn btn-info">Locate</button>
+<button class="btn btn-info"><i class="fa fa-bars" aria-hidden="true" style='font-size:300%;'></i></button> 
+    <!-- <button class="btn btn-info">Locate</button> -->
   <div class="col-md-4">
 
 
   <div style="height:8%;border-bottom:1px solid #808b9c">
 <!--   <form style="float: left;height:100%;margin-left:0px;">
   </form> -->
-  <h2 style="">PICK A LOCATION
-   <i class="fa fa-angle-double-left" style="float: right; font-size:120%"></i>
+  <h2 style="">LOCATE
+   <a href="#"><i class="fa fa-caret-left" style="float: right; font-size:120%"></i></a>
 </h2>
   </div>
 

@@ -96,7 +96,7 @@ $("button").click(function() {
   $(".col-md-4").animate({width:'toggle'}, 150);
 });
 
-$("i").click(function() {
+$(".fa-caret-left").click(function() {
   $(".col-md-4").animate({width:'toggle'}, 150);
 });
 
