@@ -74,7 +74,7 @@ app1.controller('mappa', function($scope){
             //infoWindow.setContent('<div id="iw-container"><div class="iw-title">'+ marker.nana+'</div></div>')
 
 infoWindow.setContent('<div id="iw-container">' +
-                    '<div class="iw-title">Porcelain Factory of Vista Alegre</div>' +
+                    '<div class="iw-title">Porcelain Factory of Vist</div>' +
                     '<div class="iw-content">' +
                       '<div class="iw-subTitle">History</div>' +
                       '<img src="http://maps.marnoto.com/en/5wayscustomizeinfowindow/images/vistalegre.jpg" alt="Porcelain Factory of Vista Alegre" height="115" width="83">' +
