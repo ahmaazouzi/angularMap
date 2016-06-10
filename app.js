@@ -57,7 +57,7 @@ app1.controller('mappa', function($scope){
 
     $scope.myData = JSON.stringify(cities);
 
-    var infoWindow = new google.maps.InfoWindow({maxWidth:350});
+    var infoWindow = new google.maps.InfoWindow({maxWidth:600});
 
     var Markado = function(argumado){
         var marker = new google.maps.Marker({
@@ -121,10 +121,10 @@ google.maps.event.addListener(infoWindow, 'domready', function() {
    iwBackground.children(':nth-child(3)').find('div').children().css({'box-shadow': 'rgba(72, 181, 233, 0.6) 0px 1px 6px',
     'z-index' : '1'});
    var iwCloseBtn = iwOuter.next();
-   iwCloseBtn.css({opacity: '1', right: '38px', top: '3px',
-    border: '7px solid #48b5e9', 'border-radius': '13px', 'box-shadow': '0 0 5px #3990B9'});
+    iwCloseBtn.css({'display': 'none'});
+   // iwCloseBtn.css({opacity: '1', right: '38px', top: '3px',
+   //  border: '7px solid #48b5e9', 'border-radius': '13px', 'box-shadow': '0 0 5px #3990B9'});
 });
-
 
 
 
@@ -140,7 +140,7 @@ $("button").click(function() {
   $(".col-md-4").animate({width:'toggle'}, 150);
 });
 
-$(".fa-caret-left").click(function() {
+$(".fa-angle-left").click(function() {
   $(".col-md-4").animate({width:'toggle'}, 150);
 });
 
