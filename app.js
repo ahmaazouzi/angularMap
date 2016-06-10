@@ -57,7 +57,7 @@ app1.controller('mappa', function($scope){
 
     $scope.myData = JSON.stringify(cities);
 
-    var infoWindow = new google.maps.InfoWindow({maxWidth:200});
+    var infoWindow = new google.maps.InfoWindow({maxWidth:350});
 
     var Markado = function(argumado){
         var marker = new google.maps.Marker({
@@ -71,7 +71,22 @@ app1.controller('mappa', function($scope){
 
         $scope.markers.push(marker);
         marker.addListener('click', function() {
-            infoWindow.setContent('<h2>'+ marker.nana+'</h2>')
+            //infoWindow.setContent('<div id="iw-container"><div class="iw-title">'+ marker.nana+'</div></div>')
+
+infoWindow.setContent('<div id="iw-container">' +
+                    '<div class="iw-title">Porcelain Factory of Vista Alegre</div>' +
+                    '<div class="iw-content">' +
+                      '<div class="iw-subTitle">History</div>' +
+                      '<img src="http://maps.marnoto.com/en/5wayscustomizeinfowindow/images/vistalegre.jpg" alt="Porcelain Factory of Vista Alegre" height="115" width="83">' +
+                      '<p>Founded in 1824, the Porcelain Factory of Vista Alegre was the first industrial unit dedicated to porcelain production in Portugal. For the foundation and success of this risky industrial development was crucial the spirit of persistence of its founder, José Ferreira Pinto Basto. Leading figure in Portuguese society of the nineteenth century farm owner, daring dealer, wisely incorporated the liberal ideas of the century, having become "the first example of free enterprise" in Portugal.</p>' +
+                      '<div class="iw-subTitle">Contacts</div>' +
+                      '<p>VISTA ALEGRE ATLANTIS, SA<br>3830-292 Ílhavo - Portugal<br>'+
+                      '<br>Phone. +351 234 320 600<br>e-mail: geral@vaa.pt<br>www: www.myvistaalegre.com</p>'+
+                    '</div>' +
+                    '<div class="iw-bottom-gradient"></div>' +
+                  '</div>')
+
+
             infoWindow.open($scope.map, marker);
 
         });
@@ -87,8 +102,37 @@ app1.controller('mappa', function($scope){
             $scope.map.panTo(markerito.getPosition())}
 
 
+google.maps.event.addListener($scope.map, 'click', function() {
+    infoWindow.close();
+  });
+
+
+google.maps.event.addListener(infoWindow, 'domready', function() {
+   var iwOuter = $('.gm-style-iw');
+   var iwBackground = iwOuter.prev();
+   iwBackground.children(':nth-child(2)').css({'display' : 'none'});
+   iwBackground.children(':nth-child(4)').css({'display' : 'none'});
+
+   iwOuter.parent().parent().css({left: '115px'});
+   iwBackground.children(':nth-child(1)').attr('style',
+    function(i,s){ return s + 'left: 76px !important;'});
+   iwBackground.children(':nth-child(3)').attr('style',
+    function(i,s){ return s + 'left: 76px !important;'});
+   iwBackground.children(':nth-child(3)').find('div').children().css({'box-shadow': 'rgba(72, 181, 233, 0.6) 0px 1px 6px',
+    'z-index' : '1'});
+   var iwCloseBtn = iwOuter.next();
+   iwCloseBtn.css({opacity: '1', right: '38px', top: '3px',
+    border: '7px solid #48b5e9', 'border-radius': '13px', 'box-shadow': '0 0 5px #3990B9'});
+});
+
+
+
 
 });
+
+
+
+
 
 
 var duration = 'slow';
