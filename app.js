@@ -70,21 +70,56 @@ app1.controller('mappa', function($scope){
         marker.nana = argumado.city
 
         $scope.markers.push(marker);
+
         marker.addListener('click', function() {
             //infoWindow.setContent('<div id="iw-container"><div class="iw-title">'+ marker.nana+'</div></div>')
 
-infoWindow.setContent('<div id="iw-container">' +
-                    '<div class="iw-title">Porcelain Factory of Vist</div>' +
+
+    var wikiUrl = 'http://en.wikipedia.org/w/api.php?action=opensearch&search='+
+        marker.nana + '&format=json&callback=wikiCallback';
+
+
+
+    infoWindow.setContent('<div id="iw-container">' +
+                    '<div class="iw-title">' + marker.nana + '</div>' +
                     '<div class="iw-content">' +
-                      '<div class="iw-subTitle">History</div>' +
-                      '<img src="http://maps.marnoto.com/en/5wayscustomizeinfowindow/images/vistalegre.jpg" alt="Porcelain Factory of Vista Alegre" height="115" width="83">' +
-                      '<p>Founded in 1824, the Porcelain Factory of Vista Alegre was the first industrial unit dedicated to porcelain production in Portugal. For the foundation and success of this risky industrial development was crucial the spirit of persistence of its founder, José Ferreira Pinto Basto. Leading figure in Portuguese society of the nineteenth century farm owner, daring dealer, wisely incorporated the liberal ideas of the century, having become "the first example of free enterprise" in Portugal.</p>' +
+                      '<img src="http://maps.marnoto.com/en/5wayscustomizeinfowindow/images/vistalegre.jpg" alt="Porcelain Factory of Vista Alegre" height="275" width="322">' +
+                      '<p id="wiki">' + 
                       '<div class="iw-subTitle">Contacts</div>' +
                       '<p>VISTA ALEGRE ATLANTIS, SA<br>3830-292 Ílhavo - Portugal<br>'+
                       '<br>Phone. +351 234 320 600<br>e-mail: geral@vaa.pt<br>www: www.myvistaalegre.com</p>'+
                     '</div>' +
                     '<div class="iw-bottom-gradient"></div>' +
                   '</div>')
+
+
+        var $wikiElem = $('#wiki');
+
+        $.ajax({
+            url: wikiUrl,
+            dataType: 'jsonp',
+            jsonp: "callback",
+            //callback function
+            success: function(response){
+                var articleList = response[2];
+                var linka = response[1];
+
+                // for (var i = 0; i < articleList.length; i++){
+                //     articleStr = articleList[i];
+                articleStr = articleList[0];
+                linkada = linka[0];
+                var url = 'http://en.wikipedia.org/wiki/' + linkada;
+                 $wikiElem.append(articleStr + '<a style="color:lightblue" href="' + 
+                    url+
+                     '">' + '</br>read more..' + '</a>');
+                        //'<li><a href="' + url + '">' +
+                         
+                         //+ '</a></li>'
+                         //);
+                // }
+            }
+        })
+
 
 
             infoWindow.open($scope.map, marker);
@@ -126,12 +161,7 @@ google.maps.event.addListener(infoWindow, 'domready', function() {
    //  border: '7px solid #48b5e9', 'border-radius': '13px', 'box-shadow': '0 0 5px #3990B9'});
 });
 
-
-
 });
-
-
-
 
 
 

@@ -76,11 +76,13 @@ input{
 </h3>
   </div>
 
-  
+
 
       <ul class="list-group" ng-repeat="marker in markers" style="overflow:scroll">
-              <a href="#" style="hover:background-color:black"><li class="list-group-item" ng-click='markers[place]=marker;openInfoWindow($event, marker)'><h6>{{marker.nana}}</h6></i></li></a>
+              <a href="#" style="hover:background-color:black"><li class="list-group-item" ng-click='markers[place]=marker;openInfoWindow($event, marker)'>
+              <h6>{{marker.nana}}</h6></i></li></a>
       </ul>
+
 
       <!--  -->
  <!--        <div id='contento' style='background:lightgrey;'><h1>{{markers[place].nana}}</h1>
