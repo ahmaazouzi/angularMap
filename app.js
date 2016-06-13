@@ -57,7 +57,7 @@ app1.controller('mappa', function($scope){
 
     $scope.myData = JSON.stringify(cities);
 
-    var infoWindow = new google.maps.InfoWindow({maxWidth:600});
+    var infoWindow = new google.maps.InfoWindow({maxWidth:350});
 
     var Markado = function(argumado){
         var marker = new google.maps.Marker({
@@ -83,7 +83,7 @@ app1.controller('mappa', function($scope){
     infoWindow.setContent('<div id="iw-container">' +
                     '<div class="iw-title">' + marker.nana + '</div>' +
                     '<div class="iw-content">' +
-                      '<img src="http://maps.marnoto.com/en/5wayscustomizeinfowindow/images/vistalegre.jpg" alt="Porcelain Factory of Vista Alegre" height="275" width="322">' +
+                      //'<img>'  + //src="http://maps.marnoto.com/en/5wayscustomizeinfowindow/images/vistalegre.jpg" alt="Porcelain Factory of Vista Alegre" height="275" width="322">' +
                       '<p id="wiki">' + 
                       '<div class="iw-subTitle">Contacts</div>' +
                       '<p>VISTA ALEGRE ATLANTIS, SA<br>3830-292 Ílhavo - Portugal<br>'+
@@ -111,7 +111,7 @@ app1.controller('mappa', function($scope){
                 var url = 'http://en.wikipedia.org/wiki/' + linkada;
                  $wikiElem.append(articleStr + '<a style="color:lightblue" href="' + 
                     url+
-                     '">' + '</br>read more..' + '</a>');
+                     '">' + '</br>Read more..' + '</a>');
                         //'<li><a href="' + url + '">' +
                          
                          //+ '</a></li>'
@@ -119,6 +119,12 @@ app1.controller('mappa', function($scope){
                 // }
             }
         })
+
+
+        var $img = $(".iw-content");
+        var streetViewUrl = 'https://maps.googleapis.com/maps/api/streetview?size=320x275&location='+
+            marker.nana + '';
+        $img.append('<img class="bgimg" src="' + streetViewUrl + '">')        
 
 
 
