@@ -85,7 +85,7 @@ app1.controller('mappa', function($scope){
                     '<div class="iw-content">' +
                       //'<img>'  + //src="http://maps.marnoto.com/en/5wayscustomizeinfowindow/images/vistalegre.jpg" alt="Porcelain Factory of Vista Alegre" height="275" width="322">' +
                       '<p id="wiki">' + 
-                      '<div class="iw-subTitle">Contacts</div>' +
+                      //'<div class="iw-subTitle">Contacts</div>' +
                       '<p>VISTA ALEGRE ATLANTIS, SA<br>3830-292 Ílhavo - Portugal<br>'+
                       '<br>Phone. +351 234 320 600<br>e-mail: geral@vaa.pt<br>www: www.myvistaalegre.com</p>'+
                     '</div>' +
